@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
+// other packeges to help run the app
+import 'package:provider/provider.dart';
+
 // other dart file to reuse
 import './screens/listview_screen.dart';
 import './screens/details_screen.dart';
+import './providers/products_api.dart';
 
 // route file
 import './routes/routes.dart';
@@ -17,16 +21,29 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(
+          value: ProductsApi(),
+        )
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+
+        // themes and fonts
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+            secondary: Colors.black87,
+          ),
+        ),
+        home: ListViewScreen(),
+        routes: {
+          MyRoutes.listViewScreen: (context) => ListViewScreen(),
+          MyRoutes.detailsScreen: (context) => DetailsScreen(),
+        },
       ),
-      home: ListViewScreen(),
-      routes: {
-        MyRoutes.listViewScreen: (context) => ListViewScreen(),
-        MyRoutes.detailsScreen: (context) => DetailsScreen(),
-      },
     );
   }
 }
