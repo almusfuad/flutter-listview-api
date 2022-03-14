@@ -8,7 +8,12 @@ import 'package:http/http.dart' as http;
 // other dart file to use in this file
 import '../models/data.dart';
 
+
+// declare class for all Api
 class ProductsApi with ChangeNotifier {
+
+
+  // Function future async to get data if response is okay
   Future<List<Data>> fetchData() async {
     final url = Uri.parse('https://picsum.photos/v2/list');
 
@@ -23,10 +28,4 @@ class ProductsApi with ChangeNotifier {
       throw Exception('An error occured!');
     }
   }
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   futureData = fetchData();
-  // }
 }

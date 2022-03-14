@@ -11,11 +11,12 @@ class ListViewScreen extends StatefulWidget {
 }
 
 class _ListViewScreenState extends State<ListViewScreen> {
+  // declare variable to use fetch data
   Future<List<Data>>? futureData;
 
+  // set initial state as fetchdata
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     futureData = ProductsApi().fetchData();
   }
@@ -38,6 +39,7 @@ class _ListViewScreenState extends State<ListViewScreen> {
           ),
         ),
         body: Center(
+          // data fetting from api and build a list to show data in list
           child: FutureBuilder<List<Data>>(
             future: futureData,
             builder: (BuildContext ctx, AsyncSnapshot<List<Data>> snapshot) {

@@ -22,13 +22,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
+      // using providers to make data more flexible
       providers: [
         ChangeNotifierProvider.value(
           value: ProductsApi(),
         )
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Author list',
         debugShowCheckedModeBanner: false,
 
         // themes and fonts
@@ -38,6 +39,8 @@ class MyApp extends StatelessWidget {
             secondary: Colors.black87,
           ),
         ),
+
+        // routing and initial stage screen
         home: ListViewScreen(),
         routes: {
           MyRoutes.listViewScreen: (context) => ListViewScreen(),

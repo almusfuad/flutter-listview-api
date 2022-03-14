@@ -1,4 +1,6 @@
+// declare data class to get data
 class Data {
+  // declare non assign variable  name
   String? id;
   String? author;
   String? downloadUrl;
@@ -15,6 +17,7 @@ class Data {
     this.width,
   });
 
+  // function to get data via json and assign declared varible
   factory Data.fromJson(Map<String, dynamic> json) {
     return Data(
       id: json['id'],
