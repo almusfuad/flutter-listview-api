@@ -52,44 +52,77 @@ class _ListViewScreenState extends State<ListViewScreen> {
                       color: Colors.white60,
                       child: Center(
                         child: Container(
-                          margin: const EdgeInsets.symmetric(vertical: 2.0),
+                          // margin: const EdgeInsets.only(
+                          //   bottom: 1.0,
+                          // ),
                           decoration: BoxDecoration(
                             color: Colors.amber[100],
+                            border: Border.all(
+                              color: Colors.black,
+                              width: 1.0,
+                              style: BorderStyle.solid,
+                            ),
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                              left: 20.0,
-                              right: 20.0,
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.blueGrey[50],
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  left: 10.0,
+                                  right: 10.0,
+                                ),
+                                child: Container(
+                                  height: 30.0,
+                                  margin: const EdgeInsets.only(
+                                    bottom: 2.0,
                                   ),
-                                  child: Text(
-                                    data![index].id.toString(),
-                                    style: const TextStyle(
-                                      color: Colors.black87,
-                                      fontSize: 16,
-                                    ),
-                                    textAlign: TextAlign.center,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.blueGrey[50],
+                                        ),
+                                        child: Text(
+                                          data![index].id.toString(),
+                                          style: const TextStyle(
+                                            color: Colors.black87,
+                                            fontSize: 18.0,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.blueGrey[50],
+                                        ),
+                                        child: Text(
+                                          data[index].author.toString(),
+                                          style: const TextStyle(
+                                            color: Colors.black87,
+                                            fontSize: 20.0,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context)
+                                              .pushNamed('/detailsScreen');
+                                        },
+                                        child: const Text(
+                                          'Details',
+                                          // style: TextStyle(
+                                          //   fontSize: 12.0,
+                                          // ),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.blueGrey[50],
-                                  ),
-                                  child: Text(
-                                    data[index].author.toString(),
-                                    style: const TextStyle(
-                                      color: Colors.black87,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),

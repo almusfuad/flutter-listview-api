@@ -5,8 +5,8 @@ class Data {
   String? author;
   String? downloadUrl;
   String? url;
-  String? height;
-  String? width;
+  int? height;
+  int? width;
 
   Data({
     this.id,
