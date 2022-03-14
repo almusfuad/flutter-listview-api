@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 // packages to use multi fuction
 import 'package:http/http.dart' as http;
@@ -10,7 +10,7 @@ import '../models/data.dart';
 
 class ProductsApi with ChangeNotifier {
   Future<List<Data>> fetchData() async {
-    final url = Uri.parse('https://picsum.photos/v2/');
+    final url = Uri.parse('https://picsum.photos/v2/list');
 
     final response = await http.get(url);
 
@@ -23,4 +23,10 @@ class ProductsApi with ChangeNotifier {
       throw Exception('An error occured!');
     }
   }
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   futureData = fetchData();
+  // }
 }

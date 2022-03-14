@@ -1,10 +1,10 @@
 class Data {
-  int? id;
+  String? id;
   String? author;
   String? downloadUrl;
   String? url;
-  int? height;
-  int? width;
+  String? height;
+  String? width;
 
   Data({
     this.id,
