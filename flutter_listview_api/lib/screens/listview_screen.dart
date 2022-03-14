@@ -1,5 +1,6 @@
 // Import core packages to intialize app
 import 'package:flutter/material.dart';
+import 'package:flutter_listview_api/providers/details_api.dart';
 
 // other making dart file
 import '../models/data.dart';

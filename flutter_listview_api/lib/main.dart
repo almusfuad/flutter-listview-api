@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_listview_api/models/data.dart';
+import 'package:flutter_listview_api/providers/details_api.dart';
 
 // other packeges to help run the app
 import 'package:provider/provider.dart';
@@ -26,7 +28,13 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider.value(
           value: ProductsApi(),
-        )
+        ),
+        ChangeNotifierProvider.value(
+          value: Data(),
+        ),
+        ChangeNotifierProvider.value(
+          value: DetailsApi(),
+        ),
       ],
       child: MaterialApp(
         title: 'Author list',

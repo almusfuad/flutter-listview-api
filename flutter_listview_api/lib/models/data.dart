@@ -1,5 +1,7 @@
 // declare data class to get data
-class Data {
+import 'package:flutter/material.dart';
+
+class Data with ChangeNotifier {
   // declare non assign variable  name
   String? id;
   String? author;
